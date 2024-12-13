@@ -53,14 +53,14 @@
 
             else if ((userC == "Rock" && compC == "Paper") || 
                 (userC == "Scissors" && compC == "Rock") ||
-                (userC == "Paper" && compC == "Rock")){
+                (userC == "Paper" && compC == "Scissors")){
                     compScore++;
                     roundWinner = "Computer";
                 }
 
             else if ((compC == "Rock" && userC == "Paper") || 
             (compC == "Scissors" && userC == "Rock") ||
-            (compC == "Paper" && userC == "Rock")){
+            (compC == "Paper" && userC == "Scissors")){
                 userScore++;
                 roundWinner = "User";
             }
@@ -68,9 +68,17 @@
             return "User choice: " + userC + ". Computer choice: " + compC + ". User score: " + userScore + ". Computer score: " + compScore + ". Round winner: " + roundWinner + ".";
         }
 
-        let userChoice = getUserChoice();
-        let compChoice = getCompChoice();
-        console.log(playRound(userChoice, compChoice));
+        function playGame () {
+            for (let i = 0; i < 5; i++){
+                let userChoice = getUserChoice();
+                let compChoice = getCompChoice();
+                console.log(playRound(userChoice, compChoice));
+                }
+            }
+
+        playGame();
+
+
 
 
     </script>
