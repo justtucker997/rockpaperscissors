@@ -46,8 +46,31 @@
             return uChoice;
         }
 
-        console.log(getUserChoice());
-        console.log(getCompChoice());
+        function playRound (userC, compC) {
+            if (userC == compC ){
+                roundWinner = "Tie"
+            }
+
+            else if ((userC == "Rock" && compC == "Paper") || 
+                (userC == "Scissors" && compC == "Rock") ||
+                (userC == "Paper" && compC == "Rock")){
+                    compScore++;
+                    roundWinner = "Computer";
+                }
+
+            else if ((compC == "Rock" && userC == "Paper") || 
+            (compC == "Scissors" && userC == "Rock") ||
+            (compC == "Paper" && userC == "Rock")){
+                userScore++;
+                roundWinner = "User";
+            }
+
+            return "User choice: " + userC + ". Computer choice: " + compC + ". User score: " + userScore + ". Computer score: " + compScore + ". Round winner: " + roundWinner + ".";
+        }
+
+        let userChoice = getUserChoice();
+        let compChoice = getCompChoice();
+        console.log(playRound(userChoice, compChoice));
 
 
     </script>
